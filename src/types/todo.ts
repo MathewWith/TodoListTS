@@ -16,8 +16,7 @@ interface CreateTodo {
 export type TodoAction = DeleteTodo | CreateTodo;
 
 export interface TodoState {
-    todoData: TodoStateItem[]
-    
+    todoData: TodoStateItem[] 
 }
 
 export interface TodoStateItem {

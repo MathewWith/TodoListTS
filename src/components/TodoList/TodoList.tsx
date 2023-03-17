@@ -3,11 +3,12 @@ import { Divider, List } from "antd";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { MdOutlineDelete } from "react-icons/md";
 import { useActions } from "../../hooks/useActions";
+import { TodoStateItem } from "../../types/todo";
 
 import "./TodoList.css";
 
 export const TodoList: React.FC = () => {
-  const { todoData } = useTypedSelector((state: any) => state.todos);
+  const { todoData } = useTypedSelector((state) => state.todos);
   const { deleteTodo } = useActions();
   return (
     <>
@@ -16,7 +17,7 @@ export const TodoList: React.FC = () => {
         bordered
         size="large"
         dataSource={todoData}
-        renderItem={(item: any) => (
+        renderItem={(item: TodoStateItem) => (
           <div className="todo_list-item">
             <List.Item>{item.label}</List.Item>
             <MdOutlineDelete
